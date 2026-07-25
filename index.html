@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Putra Proyaga & Diaz Wastu Rini</title>
+    <meta name="description" content="Undangan Pernikahan Online Putra Proyaga & Diaz Wastu Rini - Gelora Bung Karno (GBK)">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- COVER / SPLASH SCREEN MODAL                -->
+    <!-- ========================================== -->
+    <div id="cover-modal" class="cover-modal">
+        <div class="cover-content">
+            <div class="cover-badge">Undangan Pernikahan</div>
+            <h2 class="cover-subtitle">You're Invited to Our Wedding</h2>
+            <h1 class="cover-title">Putra &amp; Diaz</h1>
+            <p class="cover-date"><i class="far fa-calendar-alt"></i> Senin, 1 Januari 2029</p>
+            
+            <div class="cover-photo-frame">
+                <img src="assets/images/boho_couple_hero.jpg" alt="Putra & Diaz" class="cover-photo">
+            </div>
+
+            <div class="guest-card">
+                <span class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</span>
+                <h3 id="guest-name" class="guest-name">Tamu Undangan</h3>
+            </div>
+
+            <button id="btn-open-invitation" class="btn-primary btn-open" onclick="document.getElementById('cover-modal').style.display='none'; var a=document.getElementById('wedding-audio'); if(a){a.muted=false; a.volume=1.0; a.play().catch(function(e){console.log(e);});} if(window.openInvitation) window.openInvitation();">
+                <i class="fas fa-envelope-open"></i> Buka Undangan
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- AUDIO / BACKSOUND PLAYER (Arie Untung - Mencintaimu) -->
+    <!-- ========================================== -->
+    <audio id="wedding-audio" src="assets/mp3.mp3" loop preload="auto">
+        <source src="assets/mp3.mp3" type="audio/mpeg">
+        Browsermu tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Tombol Musik Melayang / Floating Audio Button -->
+    <div id="audio-control" class="audio-control" title="Putar / Hentikan Musik" onclick="var a=document.getElementById('wedding-audio'); if(a){ if(a.paused){a.muted=false; a.volume=1.0; a.play(); this.classList.add('playing');} else {a.pause(); this.classList.remove('playing');} }">
+        <div class="vinyl-disc" id="vinyl-disc">
+            <div class="vinyl-inner">
+                <i class="fas fa-music music-icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main id="main-content" class="main-content">
+
+        <!-- ========================================== -->
+        <!-- NAVBAR NAVIGATION                          -->
+        <!-- ========================================== -->
+        <nav class="navbar">
+            <a href="#hero" class="nav-brand">P &amp; D</a>
+            <div class="nav-links">
+                <a href="#mempelai"><i class="fas fa-heart"></i><span>Mempelai</span></a>
+                <a href="#acara"><i class="fas fa-calendar-check"></i><span>Acara</span></a>
+                <a href="#countdown"><i class="fas fa-hourglass-half"></i><span>Waktu</span></a>
+                <a href="#story"><i class="fas fa-book-open"></i><span>Kisah</span></a>
+                <a href="#gallery"><i class="fas fa-images"></i><span>Galeri</span></a>
+                <a href="#rsvp"><i class="fas fa-paper-plane"></i><span>RSVP</span></a>
+            </div>
+        </nav>
+
+        <!-- ========================================== -->
+        <!-- HERO SECTION (MATCHING REFERENCE IMAGE)   -->
+        <!-- ========================================== -->
+        <section id="hero" class="hero-section">
+            <div class="hero-slider-container">
+                <div class="slider-wrapper" id="hero-slider">
+                    <!-- SLIDE 1: VIDEO MP4 -->
+                    <div class="slide active">
+                        <video id="hero-video" class="hero-banner-video" autoplay loop muted playsinline poster="assets/images/foto_slide1.jpg">
+                            <source src="assets/video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- SLIDE 2: FOTO SLIDE 1 (BARU) -->
+                    <div class="slide">
+                        <img src="assets/images/foto_slide1.jpg" alt="Foto Prewedding Slide 1" class="hero-banner-img">
+                    </div>
+                    <!-- SLIDE 3: FOTO SLIDE 2 (BARU) -->
+                    <div class="slide">
+                        <img src="assets/images/foto_slide2.jpg" alt="Foto Prewedding Slide 2" class="hero-banner-img">
+                    </div>
+                    <!-- SLIDE 4: FOTO SLIDE 3 (BARU) -->
+                    <div class="slide">
+                        <img src="assets/images/foto_slide3.jpg" alt="Foto Prewedding Slide 3" class="hero-banner-img">
+                    </div>
+                </div>
+
+                <!-- SLIDER CONTROLS (NAVIGASI KIRI & KANAN) -->
+                <button class="slider-btn prev-btn" id="slider-prev" title="Slide Sebelumnya"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn" id="slider-next" title="Slide Selanjutnya"><i class="fas fa-chevron-right"></i></button>
+
+                <!-- SLIDER DOTS INDICATORS -->
+                <div class="slider-dots" id="slider-dots"></div>
+
+                <div class="hero-banner-fade"></div>
+
+                <!-- FLOATING TRANSPARENT HERO CONTENT -->
+                <div class="hero-content fade-in">
+                    <p class="hero-script-tag">You're Invited to</p>
+                    <h2 class="hero-script-tag" style="font-size: 3.8rem; margin-bottom: 8px;">Our Wedding</h2>
+                    
+                    <h1 class="hero-title-main">Putra Proyaga</h1>
+
+                    <div class="ampersand-divider">&amp;</div>
+
+                    <h1 class="hero-title-main">Diaz Wastu Rini</h1>
+
+                    <!-- RIBBON BANNER SAVE THE DATE -->
+                    <div>
+                        <div class="ribbon-date-banner">
+                            <i class="far fa-calendar-alt" style="margin-right: 8px;"></i> Senin, 1 Januari 2029
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MEMPELAI / BRIDE & GROOM SECTION           -->
+        <!-- ========================================== -->
+        <section id="mempelai" class="section mempelai-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Pasangan Pengantin</span>
+                    <h2 class="section-title">Mempelai Pria &amp; Wanita</h2>
+                    <p class="section-desc">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan kami:</p>
+                </div>
+
+                <div class="couple-grid">
+                    <!-- MEMPELAI PRIA -->
+                    <div class="couple-card reveal-left">
+                        <div class="couple-img-wrapper">
+                            <img src="assets/images/boho_groom.jpg" alt="Putra Proyaga" class="couple-img">
+                            <div class="couple-frame"></div>
+                        </div>
+                        <h3 class="couple-name">Putra Proyaga</h3>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn">
+                            <i class="fab fa-instagram"></i> @putra.proyaga
+                        </a>
+                    </div>
+
+                    <div class="couple-divider">
+                        <div class="divider-line"></div>
+                        <span class="divider-heart"><i class="fas fa-heart"></i></span>
+                        <div class="divider-line"></div>
+                    </div>
+
+                    <!-- MEMPELAI WANITA -->
+                    <div class="couple-card reveal-right">
+                        <div class="couple-img-wrapper">
+                            <img src="assets/images/boho_bride.jpg" alt="Diaz Wastu Rini" class="couple-img">
+                            <div class="couple-frame"></div>
+                        </div>
+                        <h3 class="couple-name">Diaz Wastu Rini</h3>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn">
+                            <i class="fab fa-instagram"></i> @diaz.wastu.rini
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- COUNTDOWN TIMER SECTION                    -->
+        <!-- ========================================== -->
+        <section id="countdown" class="section countdown-section">
+            <div class="container text-center">
+                <div class="countdown-card fade-in">
+                    <span class="section-tag" style="color: var(--accent-gold);">Save The Date</span>
+                    <h2 class="section-title">Hitung Mundur Acara</h2>
+                    <p class="countdown-subtitle">Menghitung hari menuju momen kebahagiaan kami</p>
+
+                    <div class="timer-grid">
+                        <div class="timer-box">
+                            <span id="days" class="timer-value">00</span>
+                            <span class="timer-label">Hari</span>
+                        </div>
+                        <div class="timer-colon">:</div>
+                        <div class="timer-box">
+                            <span id="hours" class="timer-value">00</span>
+                            <span class="timer-label">Jam</span>
+                        </div>
+                        <div class="timer-colon">:</div>
+                        <div class="timer-box">
+                            <span id="minutes" class="timer-value">00</span>
+                            <span class="timer-label">Menit</span>
+                        </div>
+                        <div class="timer-colon">:</div>
+                        <div class="timer-box">
+                            <span id="seconds" class="timer-value">00</span>
+                            <span class="timer-label">Detik</span>
+                        </div>
+                    </div>
+
+                    <a id="btn-add-calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Putra+%26+Diaz&dates=20290101T020000Z/20290101T080000Z&details=Acara+Pernikahan+Putra+Proyaga+%26+Diaz+Wastu+Rini+di+GBK&location=Gelora+Bung+Karno+Jakarta" target="_blank" rel="noopener" class="btn-secondary" style="border-color: var(--accent-gold); color: var(--accent-gold);">
+                        <i class="far fa-calendar-plus"></i> Simpan ke Google Calendar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- DETAIL ACARA SECTION (SIDE BY SIDE LAYOUT) -->
+        <!-- ========================================== -->
+        <section id="acara" class="section acara-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Waktu &amp; Tempat</span>
+                    <h2 class="section-title">Rangkaian Acara</h2>
+                    <p class="section-desc">Syukuran dan kebahagiaan kami akan dilaksanakan pada:</p>
+                </div>
+
+                <!-- SIDE BY SIDE REFERENCE CARD -->
+                <div class="events-grid-reference fade-in">
+                    <div class="event-columns">
+                        <!-- AKAD NIKAH -->
+                        <div class="event-column">
+                            <h3 class="event-col-title">Akad Nikah</h3>
+                            <p class="event-col-date"><i class="far fa-calendar-alt"></i> Senin, 1 Januari 2029</p>
+                            <p class="event-col-time"><i class="far fa-clock"></i> 08.00 - 10.00 WIB</p>
+                            <p class="event-col-venue">Stadion Utama GBK</p>
+                            <p class="event-col-address">Jl. Pintu Satu Senayan, Gelora, Kec. Tanah Abang, Jakarta Pusat</p>
+                            <div style="margin-top: 16px;">
+                                <a href="https://maps.google.com/?q=Stadion+Utama+Gelora+Bung+Karno+Jakarta" target="_blank" rel="noopener" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">
+                                    <i class="fas fa-map-marker-alt"></i> Location Map
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- VERTICAL DOTTED DIVIDER -->
+                        <div class="event-col-divider"></div>
+
+                        <!-- RESEPSI PERNIKAHAN -->
+                        <div class="event-column">
+                            <h3 class="event-col-title">Resepsi Pernikahan</h3>
+                            <p class="event-col-date"><i class="far fa-calendar-alt"></i> Senin, 1 Januari 2029</p>
+                            <p class="event-col-time"><i class="far fa-clock"></i> 11.00 - 15.00 WIB</p>
+                            <p class="event-col-venue">Grand Ballroom GBK</p>
+                            <p class="event-col-address">Kawasan Gelora Bung Karno, Senayan, Jakarta Pusat</p>
+                            <div style="margin-top: 16px;">
+                                <a href="https://maps.google.com/?q=Gelora+Bung+Karno+Senayan+Jakarta" target="_blank" rel="noopener" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">
+                                    <i class="fas fa-map-marker-alt"></i> Location Map
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR CODE LOCATION BOX (MATCHING SCREENSHOT) -->
+                <div class="qr-code-box fade-in">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.google.com/?q=Gelora+Bung+Karno+Senayan+Jakarta" alt="Scan QR Location" class="qr-img">
+                    <div>
+                        <h4 class="qr-info-title">Scan Me for Maps</h4>
+                        <p class="qr-info-text"><strong>Lokasi Acara GBK:</strong><br>Grand Ballroom &amp; Stadion Utama Gelora Bung Karno, Senayan, DKI Jakarta 10270</p>
+                        <small style="color: var(--primary); font-weight: 600;"><i class="fas fa-qrcode"></i> Pindai kode QR dengan kamera HP Anda</small>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- KISAH CINTA / LOVE STORY SECTION          -->
+        <!-- ========================================== -->
+        <section id="story" class="section story-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Perjalanan Kami</span>
+                    <h2 class="section-title">Kisah Cinta</h2>
+                    <p class="section-desc">Bagaimana cerita kami bermula hingga melangkah ke pelaminan</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Januari 2015</span>
+                            <h3>Pertama Kali Bertemu</h3>
+                            <p>Kami pertama kali berkenalan dalam sekolah SMPN 11 Bekasi.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal-right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Januari 2023</span>
+                            <h3>Menjalin Komitmen</h3>
+                            <p>Setelah sekian lama bersahabat, kami memutuskan untuk berkomitmen melangkah bersama.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Januari 2026</span>
+                            <h3>Momen Lamaran</h3>
+                            <p>Dengan restu kedua orang tua, Putra secara resmi melamar Diaz pada awal tahun ini.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal-right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Desember 2026</span>
+                            <h3>Hari Pernikahan</h3>
+                            <p>Hari bahagia yang menjadi awal perjalanan rumah tangga kami di Gelora Bung Karno (GBK).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- GALERI FOTO SECTION                       -->
+        <!-- ========================================== -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Dokumentasi</span>
+                    <h2 class="section-title">Galeri Foto</h2>
+                    <p class="section-desc">Kenangan manis perjalanan kebersamaan kami</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item fade-in">
+                        <img src="assets/images/boho_couple_hero.jpg" alt="Galeri Foto 1" class="gallery-img">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/images/boho_groom.jpg" alt="Galeri Foto 2" class="gallery-img">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/images/boho_bride.jpg" alt="Galeri Foto 3" class="gallery-img">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/images/foto5.jpg" alt="Galeri Foto 4" class="gallery-img">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/images/foto6.jpg" alt="Galeri Foto 5" class="gallery-img">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/images/foto7.jpg" alt="Galeri Foto 6" class="gallery-img">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/images/foto8jpg.jpg" alt="Galeri Foto 7" class="gallery-img">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- RSVP & GUESTBOOK SECTION                   -->
+        <!-- ========================================== -->
+        <section id="rsvp" class="section rsvp-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Konfirmasi Kehadiran</span>
+                    <h2 class="section-title">RSVP &amp; Ucapan Doa</h2>
+                    <p class="section-desc">Mohon konfirmasi kehadiran dan tinggalkan ucapan doa untuk kami</p>
+                </div>
+
+                <div class="rsvp-grid">
+                    <!-- RSVP FORM -->
+                    <div class="rsvp-card reveal-left">
+                        <h3 class="card-subtitle"><i class="fas fa-edit"></i> Formulir RSVP</h3>
+                        <form id="rsvp-form" class="rsvp-form">
+                            <div class="form-group">
+                                <label for="name">Nama Lengkap *</label>
+                                <input type="text" id="name" required placeholder="Masukkan nama Anda">
+                            </div>
+                            <div class="form-group">
+                                <label for="attendance">Konfirmasi Kehadiran *</label>
+                                <select id="attendance" required>
+                                    <option value="" disabled selected>-- Pilih Konfirmasi --</option>
+                                    <option value="Hadir">Ya, Saya Akan Hadir</option>
+                                    <option value="Tidak Hadir">Maaf, Tidak Bisa Hadir</option>
+                                    <option value="Ragu-ragu">Masih Ragu-ragu</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Jumlah Tamu Hadir</label>
+                                <select id="guests">
+                                    <option value="1 Orang">1 Orang</option>
+                                    <option value="2 Orang">2 Orang</option>
+                                    <option value="> 2 Orang">&gt; 2 Orang</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Ucapan &amp; Doa Restu *</label>
+                                <textarea id="message" rows="4" required placeholder="Tuliskan ucapan selamat dan doa untuk mempelai..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Kirim Konfirmasi &amp; Ucapan
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- GUESTBOOK WALL -->
+                    <div class="guestbook-card reveal-right">
+                        <h3 class="card-subtitle"><i class="fas fa-comments"></i> Buku Tamu &amp; Ucapan (<span id="wish-count">0</span>)</h3>
+                        <div id="wishes-list" class="wishes-list">
+                            <!-- Dynamically filled by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- DIGITAL ANGPAO / GIFT SECTION              -->
+        <!-- ========================================== -->
+        <section id="gift" class="section gift-section">
+            <div class="container text-center">
+                <div class="gift-card fade-in">
+                    <span class="section-tag">Kondangan Online / Tanda Kasih</span>
+                    <h2 class="section-title">Transfer &amp; Hadiah Digital</h2>
+                    <p class="section-desc">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika ingin memberikan hadiah/kondangan online, Anda dapat menyalurkannya melalui:</p>
+
+                    <div class="bank-grid">
+                        <!-- DANA -->
+                        <div class="bank-card">
+                            <div class="bank-logo">DANA</div>
+                            <p class="account-number" id="dana-num">0857 1483 5952</p>
+                            <p class="account-name">a.n. Putra Proyaga / Diaz Wastu Rini</p>
+                            <button class="btn-copy" onclick="copyToClipboard('085714835952', 'Nomor DANA')">
+                                <i class="far fa-copy"></i> Salin No. DANA
+                            </button>
+                        </div>
+
+                        <!-- TRANSFER BANK / E-WALLET -->
+                        <div class="bank-card">
+                            <div class="bank-logo">TRANSFER BANK</div>
+                            <p class="account-number" id="transfer-num">0857 1483 5952</p>
+                            <p class="account-name">a.n. Putra Proyaga</p>
+                            <button class="btn-copy" onclick="copyToClipboard('085714835952', 'Nomor Transfer')">
+                                <i class="far fa-copy"></i> Salin Nomor
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROTOKOL FOOTER BANNER (MATCHING REFERENCE IMAGE) -->
+        <div class="protocol-banner">
+            Mohon doa restu &amp; kedatangannya dalam acara pernikahan kami dan dihimbau untuk selalu mematuhi protokol kesehatan dengan mencuci tangan, memakai masker, dan menjaga jarak.
+        </div>
+
+        <!-- ========================================== -->
+        <!-- FOOTER                                     -->
+        <!-- ========================================== -->
+        <footer class="footer">
+            <div class="container text-center">
+                <h2 class="footer-title">Putra &amp; Diaz</h2>
+                <p class="footer-desc">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir di GBK untuk memberikan doa restu.</p>
+                <p class="footer-thanks">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+                <div class="footer-credit">
+                    <small>Dibuat dengan <i class="fas fa-heart text-danger"></i> untuk Hari Bahagia Putra &amp; Diaz</small>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Enlarged gallery preview">
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
